@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/learnings" mode="merge"/>
+    <filter root="/content/learnings" mode="merge"/>
+    <filter root="/content/dam/learnings" mode="merge"/>
+    <filter root="/content/experience-fragments/learnings" mode="merge"/>
+</workspaceFilter>
