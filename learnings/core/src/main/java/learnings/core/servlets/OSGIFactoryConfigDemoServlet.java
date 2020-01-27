@@ -39,7 +39,8 @@ public class OSGIFactoryConfigDemoServlet extends SlingSafeMethodsServlet{
         configMap.put(config.getSiteName(), config);
         }
    
-    protected synchronized void unbindOSGIFactoryConfigDemo(final OSGIFactoryConfigDemo config) {       
+    protected synchronized void unbindOSGIFactoryConfigDemo(final OSGIFactoryConfigDemo config) {
+       
         configMap.remove(config.getSiteName());
     }
 	
