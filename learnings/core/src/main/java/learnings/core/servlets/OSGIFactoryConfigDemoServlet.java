@@ -54,12 +54,16 @@ public class OSGIFactoryConfigDemoServlet extends SlingSafeMethodsServlet{
 		
 		String siteIdentifier = req.getParameter("siteidentifier");
 		
+		try {
 			OSGIFactoryConfigDemo configValues = configMap.get(siteIdentifier);
 			String apiEndpoint = configValues.getAPIEndpoint();
-			String apiKey = configValues.getAPIKey();
-			
-			log.info("Config values of identifier={} are {}, {}", siteIdentifier, apiEndpoint, apiKey);
-		
+			String apiKey = configValues.getAPIKey();			
+			log.info("Config values of identifier={} are {}, {}", siteIdentifier, apiEndpoint, apiKey);			
+			resp.getWriter().write("Factory config objects count="+configMap.size());
+			resp.getWriter().write("Specific instance of a factory config="+osgiDemo.getAPIEndpoint());
+		} catch (IOException e) {
+			log.error("IOException");
+		}
 	}
 
 }
