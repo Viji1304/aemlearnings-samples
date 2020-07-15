@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Nested Multifield - Coral UI 3"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container"
+        margin="{Boolean}true">
+        <items jcr:primaryType="nt:unstructured">
+            <content
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <textfield
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Text Field"
+                        name="./plainText"/>
+                    <outeraccordion
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/accordion">
+                        <items jcr:primaryType="nt:unstructured">
+                            <multifield
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Expand to author Outer Multifield"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Outer Multifield">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./outerMulti">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <pathfield
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Path Field"
+                                            name="./pathField"/>
+                                        <textfield
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Text Field"
+                                            name="./textField"/>
+                                        <select
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Select from dropdown"
+                                            name="./select">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <option1
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Option 1"
+                                                    value="option1"/>
+                                                <option2
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Option 2"
+                                                    value="option2"/>
+                                                <option3
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Option 3"
+                                                    value="option3"/>
+                                            </items>
+                                        </select>
+                                        <radio
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                            fieldLabel="Radio Group"
+                                            name="./radio">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <yes
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Yes"
+                                                    value="yes"/>
+                                                <no
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="No"
+                                                    value="no"/>
+                                            </items>
+                                        </radio>
+                                        <richtext
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                            fieldLabel="RTE content"
+                                            name="./richtext"
+                                            useFixedInlineToolbar="{Boolean}true"/>
+                                        <firstinneraccordion
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/accordion">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <innermultifield
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="First Inner Multifield"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true"
+                                                    fieldLabel="First Inner Multifield">
+                                                    <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./firstInnerMulti">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <textfield
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="First Inner Text"
+                                                                name="./firstInnerText"/>
+                                                            <tags
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                                allowBulkEdit="{Boolean}true"
+                                                                autocreateTag="{Boolean}true"
+                                                                fieldLabel="Tags"
+                                                                multiple="{Boolean}true"
+                                                                name="./tagValues"
+                                                                validation="restrict-values">
+                                                                <granite:data
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    cq-msm-lockable="cq:tags"
+                                                                    fieldLimit="{Long}3"/>
+                                                            </tags>
+                                                        </items>
+                                                    </field>
+                                                </innermultifield>
+                                            </items>
+                                        </firstinneraccordion>
+                                        <secondinneraccordion
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/accordion">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <secondinnermulti
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Second Inner Multifield"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true"
+                                                    fieldLabel="Second Inner Multifield">
+                                                    <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./secondInnerMulti">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <textfield
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Second Inner Text"
+                                                                name="./secondInnerText"/>
+                                                        </items>
+                                                    </field>
+                                                </secondinnermulti>
+                                            </items>
+                                        </secondinneraccordion>
+                                    </items>
+                                </field>
+                            </multifield>
+                        </items>
+                    </outeraccordion>
+                </items>
+            </content>
+        </items>
+    </content>
+</jcr:root>
