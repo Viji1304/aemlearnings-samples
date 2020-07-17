@@ -31,6 +31,7 @@ class UserUnitTestModelTest {
 	private ArrayList<Group> grpsList = new ArrayList<Group>();
 	private final String GROUP_TO_CHECK = "workflow-users";
 
+	/* Mock desired APIs - Starts */
 	@Mock
 	private User mockUser;
 
@@ -39,17 +40,21 @@ class UserUnitTestModelTest {
 
 	@Mock
 	private Group mockGrp;
+	/* Mock desired APIs - Ends */
 
 	@BeforeEach
 	void setUp() throws Exception {
+		/* Create Sling AdapterFactory for mocked APIs - Starts */
 		aemContext.registerAdapter(ResourceResolver.class, User.class, mockUser);
 		aemContext.registerAdapter(ResourceResolver.class, Group.class, mockGrp);
 		aemContext.registerAdapter(ResourceResolver.class, UserManager.class, mockUserMgr);
+		/* Create Sling AdapterFactory for mocked APIs - Ends */
 	}
 
+	/* Test to check if user is admin */
 	@Test
 	void testForAdminUser() {
-		lenient().when(mockUser.isAdmin()).thenReturn(true);
+		lenient().when(mockUser.isAdmin()).thenReturn(true); // dummy implementation 
 		boolean adminFlag = mockUser.isAdmin();
 		assertTrue(adminFlag);
 
@@ -57,9 +62,10 @@ class UserUnitTestModelTest {
 
 	@Test
 	void testForNonAdminUser() throws RepositoryException {
-		lenient().when(mockUserMgr.createGroup(any(String.class))).thenReturn(mockGrp);
+		lenient().when(mockUserMgr.createGroup(any(String.class))).thenReturn(mockGrp); // dummy implementation
 		boolean grpToCheckExists = false;
 		Iterator<Group> userGrps = addGrpsList().iterator();
+		/* dummy implementation for all the mocked APIs (for each line of code making use of the API) */
 		lenient().when(mockUser.isAdmin()).thenReturn(false);
 		lenient().when(mockUser.memberOf()).thenReturn(userGrps);
 		lenient().when(mockGrp.getID()).thenReturn(GROUP_TO_CHECK);
@@ -76,7 +82,7 @@ class UserUnitTestModelTest {
 			}
 
 		}
-		assertTrue(grpToCheckExists);
+		assertTrue(grpToCheckExists); // Check if desired grp matches, can be changed per the actual code logic
 	}
 
 	private ArrayList<Group> addGrpsList() throws AuthorizableExistsException, RepositoryException {
