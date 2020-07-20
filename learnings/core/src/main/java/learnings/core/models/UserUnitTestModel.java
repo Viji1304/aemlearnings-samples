@@ -40,8 +40,8 @@ public class UserUnitTestModel {
 	@Inject
 	private Page currentPage;
 	
-	@ScriptVariable
-	private ComponentContext cmpContext;
+	/*@ScriptVariable
+	private ComponentContext cmpContext;*/
 
 	public String getPageTitle() {
 		return pageTitle;
