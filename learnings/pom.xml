@@ -31,7 +31,7 @@
         <module>repository-structure</module>
 	    <module>dispatcher.ams</module>
 	    <module>dispatcher.cloud</module>
-	    <module>ui.frontend</module>
+	    <!--<module>ui.frontend</module> -->
   </modules>
 
     <properties>
