@@ -13,12 +13,15 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.api.components.ComponentContext;
+import com.day.cq.wcm.commons.WCMUtils;
 
 @Model(adaptables = { Resource.class,
 		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
@@ -36,6 +39,9 @@ public class UserUnitTestModel {
 
 	@Inject
 	private Page currentPage;
+	
+	@ScriptVariable
+	private ComponentContext cmpContext;
 
 	public String getPageTitle() {
 		return pageTitle;
@@ -50,7 +56,7 @@ public class UserUnitTestModel {
 
 	@PostConstruct
 	protected void init() {
-
+			
 		/* For Page Title */
 		if (null == pageTitle || StringUtils.isEmpty(pageTitle)) {
 			pageTitle = currentPage.getTitle();
@@ -83,6 +89,12 @@ public class UserUnitTestModel {
 			}
 
 		}
+		/* Component Decoration false */
+		ComponentContext cmpContext = WCMUtils.getComponentContext(slingRequest);
+		if(cmpContext.hasDecoration()) {
+			cmpContext.setDecorate(false);
+		}
+		LOG.info("Component cell name={}", cmpContext.getComponent().getCellName());
 	}
 
 }
