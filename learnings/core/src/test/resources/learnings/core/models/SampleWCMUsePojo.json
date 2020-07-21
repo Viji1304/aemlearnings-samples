@@ -1,0 +1,10 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "jcr:createdBy": "admin",
+  "jcr:lastModifiedBy": "admin",
+  "jcr:created": "Tue Jul 21 2020 09:13:24 GMT-0400",
+  "pagePath": "/content/learnings",
+  "pageTitle": "Sample Title from dialog",
+  "jcr:lastModified": "Tue Jul 21 2020 10:18:09 GMT-0400",
+  "sling:resourceType": "learnings/components/content/samplewcmusepojo"
+  }
