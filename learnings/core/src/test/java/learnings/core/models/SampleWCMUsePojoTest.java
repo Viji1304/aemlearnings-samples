@@ -56,7 +56,7 @@ class SampleWCMUsePojoTest {
 	 * dialog
 	 */
 	@Test
-	void testGetPageTitleFromPage() {
+	void testGetTitleFromPage() {
 
 		Resource pageResc = aemContext.currentResource(PAGE_CONTENT_PATH);
 		Page pageObj = pageResc.adaptTo(Page.class);
@@ -84,7 +84,7 @@ class SampleWCMUsePojoTest {
 	 * test title if it is authored in dialog.
 	 */
 	@Test
-	void testGetPageTitleFromResc() {
+	void testGetTitleFromComp() {
 		Resource cmpResc = aemContext.currentResource(CMP_CONTENT_PATH);
 		ValueMap cmpRescValues = cmpResc.getValueMap();
 		/* Dummy implementation for bindings - Starts */
@@ -101,7 +101,7 @@ class SampleWCMUsePojoTest {
 	 * dialog
 	 */
 	@Test
-	void testGetPagePathFromResc() {
+	void testGetPathFromComp() {
 		Resource cmpResc = aemContext.currentResource(CMP_CONTENT_PATH);
 		ValueMap cmpRescValues = cmpResc.getValueMap();
 		/* Dummy implementation for bindings - Starts */
@@ -118,7 +118,7 @@ class SampleWCMUsePojoTest {
 	 * test path if it is authored in dialog.
 	 */
 	@Test
-	void testGetPagePathFromPage() {
+	void testGetPathFromPage() {
 		Resource pageResc = aemContext.currentResource(PAGE_CONTENT_PATH);
 		Page pageObj = pageResc.adaptTo(Page.class);
 		/* Dummy implementation for bindings - Starts */
