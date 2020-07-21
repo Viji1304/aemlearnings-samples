@@ -91,7 +91,7 @@ class SampleWCMUsePojoTest {
 		lenient().when(mockBindings.get(WCMBindingsConstants.NAME_PROPERTIES)).thenReturn(cmpResc.getValueMap());
 		/* Dummy implementation for bindings - Ends */
 		pojoObj.init(mockBindings);
-		String actualTitle = cmpRescValues.get("pageTitle", String.class);
+		String actualTitle = pojoObj.getPageTitle();
 		String expectedTitle = "Sample Title from dialog";
 		assertEquals(expectedTitle, actualTitle);
 	}
@@ -108,8 +108,8 @@ class SampleWCMUsePojoTest {
 		lenient().when(mockBindings.get(WCMBindingsConstants.NAME_PROPERTIES)).thenReturn(cmpResc.getValueMap());
 		/* Dummy implementation for bindings - Ends */
 		pojoObj.init(mockBindings);
-		String actualPath = cmpRescValues.get("pagePath", String.class);
-		String expectedPath = "/content/learnings";
+		String actualPath = pojoObj.getPagePath();
+		String expectedPath = "/content/learnings" + LINK_EXTENSION;
 		assertEquals(expectedPath, actualPath);
 	}
 
