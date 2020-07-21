@@ -54,11 +54,12 @@ class UserUnitTestModelTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		/* Create Sling AdapterFactory for mocked APIs - Starts */
-		aemContext.registerAdapter(ResourceResolver.class, User.class, mockUser);
+		/*aemContext.registerAdapter(ResourceResolver.class, User.class, mockUser);
 		aemContext.registerAdapter(ResourceResolver.class, Group.class, mockGrp);
-		aemContext.registerAdapter(ResourceResolver.class, UserManager.class, mockUserMgr);
+		aemContext.registerAdapter(ResourceResolver.class, UserManager.class, mockUserMgr);*/
+	
 		/* Create Sling AdapterFactory for mocked APIs - Ends */
-
+		
 	}
 
 	/* Test to check if user is admin */
