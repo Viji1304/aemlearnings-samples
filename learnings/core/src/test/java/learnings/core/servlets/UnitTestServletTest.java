@@ -44,14 +44,19 @@ class UnitTestServletTest {
 
 	@Test
 	void testDoGetSlingHttpServletRequestSlingHttpServletResponse() {
+		/* Instantiate Servlet */
 		UnitTestServlet unitTestServletObj = new UnitTestServlet();
+		
+		/* Get mock request and response from aemContext */
 		MockSlingHttpServletRequest mockSlingRequest = aemContext.request();
 		MockSlingHttpServletResponse mockSlingResponse = aemContext.response();
-		parameterMap.put("siteName", "aemlearnings");
-		parameterMap.put("osgiService", mockSampleOSGIService);
+		
+		/* Prepare mock request object */
+		parameterMap.put("siteName", "aemlearnings");	
 		mockSlingRequest.setParameterMap(parameterMap);
 
-		unitTestServletObj.setSampleOSGIService(mockSampleOSGIService);
+		/* Set mocked OSGI service to the servlet Object via its set method (part of reference annotation) */
+		unitTestServletObj.setSampleOSGIService(mockSampleOSGIService); 
 		if (null != unitTestServletObj && null != mockSlingRequest && null != mockSlingResponse) {
 			unitTestServletObj.doGet(mockSlingRequest, mockSlingResponse);
 		}
@@ -66,8 +71,7 @@ class UnitTestServletTest {
 		assertTrue(mockSlingResponse.getOutputAsString().contains("aemlearnings"));
 
 		/* Checking output of servlet - Negative case */
-		assertFalse(mockSlingResponse.getOutputAsString().contains("dummystring")); // string value other than response
-																					// string
+		assertFalse(mockSlingResponse.getOutputAsString().contains("dummystring")); // string value other than response String																		
 
 		/* Other common logic part of servlet */
 
