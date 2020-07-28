@@ -38,6 +38,11 @@ public class UnitTestServlet extends SlingSafeMethodsServlet {
 		this.sampleOSGIService = sampleOSGIService;
 	}
 
+	/**
+	 * Retreives query param - 'siteName' and compares with OSGI config 'siteName'
+	 * If equals, get API Endpoint from OSGI config and calls dummy rest API
+	 * Writes the API response to servlet response object.
+	 */
 	@Override
 	protected void doGet(final SlingHttpServletRequest req, final SlingHttpServletResponse resp) {
 		resp.setContentType("application/json");
@@ -59,6 +64,11 @@ public class UnitTestServlet extends SlingSafeMethodsServlet {
 
 	}
 
+	/**
+	 * Calls Dummy REST API - 'https://postman-echo.com/get?siteName=aemlearnings'
+	 * This API returns the same query param as we pass with few other attributes in JSON format
+	 * @return API response - responseStr
+	 */
 	private String callToAPI() {
 		CloseableHttpResponse response = null;
 		String responseStr = null;
