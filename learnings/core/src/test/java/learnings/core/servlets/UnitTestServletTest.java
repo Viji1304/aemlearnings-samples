@@ -57,6 +57,8 @@ class UnitTestServletTest {
 
 		/* Set mocked OSGI service to the servlet Object via its set method (part of reference annotation) */
 		unitTestServletObj.setSampleOSGIService(mockSampleOSGIService); 
+		
+		/* Call method to be  Tested */
 		if (null != unitTestServletObj && null != mockSlingRequest && null != mockSlingResponse) {
 			unitTestServletObj.doGet(mockSlingRequest, mockSlingResponse);
 		}
