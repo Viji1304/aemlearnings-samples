@@ -155,6 +155,7 @@
                                             autoStart="{Boolean}false"
                                             class="cq-droptarget"
                                             fieldLabel="Image"
+                                            fileReferenceParameter="./imageInMulti"
                                             mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
                                             multiple="{Boolean}false"
                                             name="./file"
