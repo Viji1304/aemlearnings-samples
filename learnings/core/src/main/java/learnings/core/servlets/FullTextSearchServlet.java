@@ -37,7 +37,7 @@ public class FullTextSearchServlet extends SlingSafeMethodsServlet {
 	private static final long serialVersionUID = 1L;
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	private static final String HTML_EXTENSION = ".html";
-	private static final String SEARCH_DAM_ROOT = "/content/dam/learnings";
+	private static final String SEARCH_DAM_ROOT = "/content/dam/learnings/contentfragments";
 	private static final String SEARCH_PAGE_ROOT = "/content/learnings";
 
 	Map<String, String> finalResultMap = new HashMap<String, String>();
