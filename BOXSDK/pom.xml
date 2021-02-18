@@ -9,7 +9,6 @@
 
   <name>BOXSDKBundle</name>
   <url>http://maven.apache.org</url>
-  <!-- <description>AWS S3 dependency as OSGI bundle using maven-bundle-plugin</description> -->
   <description>Box Java SDK OSGI bundle using maven-bundle-plugin</description>
 
   <properties>
