@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.box</groupId>
+  <artifactId>boxsdkbundle</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>bundle</packaging>
+
+  <name>BOXSDKBundle</name>
+  <url>http://maven.apache.org</url>
+  <!-- <description>AWS S3 dependency as OSGI bundle using maven-bundle-plugin</description> -->
+  <description>Box Java SDK OSGI bundle using maven-bundle-plugin</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>  
+
+  <dependencies>
+    <dependency>
+        <groupId>com.box</groupId>
+        <artifactId>box-java-sdk</artifactId>
+        <version>2.48.0</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Import-Package>*;resolution:=optional</Import-Package>
+                        <Export-Package>*</Export-Package>                   
+                        <Embed-Dependency>*;inline=true</Embed-Dependency> 
+                        <Embed-Transitive>true</Embed-Transitive>                                          
+                    </instructions>                    
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
