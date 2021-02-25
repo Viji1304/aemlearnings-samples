@@ -4,7 +4,7 @@
 
   <groupId>com.box</groupId>
   <artifactId>boxsdkbundle</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>bundle</packaging>
 
   <name>BOXSDKBundle</name>
@@ -12,6 +12,10 @@
   <description>Box Java SDK OSGI bundle using maven-bundle-plugin</description>
 
   <properties>
+    <aem.host>localhost</aem.host>
+	<aem.port>4502</aem.port>
+    <sling.user>admin</sling.user>
+	<sling.password>admin</sling.password>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>  
 
@@ -37,6 +41,22 @@
                         <Embed-Transitive>true</Embed-Transitive>                                          
                     </instructions>                    
                 </configuration>
+            </plugin>
+            <plugin>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>sling-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>install-bundle</id>
+						<goals>
+							<goal>install</goal>
+						</goals>                        
+                        <configuration>
+                            <slingUrl>http://${aem.host}:${aem.port}/system/console</slingUrl>                                        
+                            <refreshPackages>true</refreshPackages>                             
+                        </configuration>
+					</execution>
+				</executions>
             </plugin>
         </plugins>
     </build>
