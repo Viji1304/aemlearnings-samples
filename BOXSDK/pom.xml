@@ -9,7 +9,7 @@
 
   <name>BOXSDKBundle</name>
   <url>http://maven.apache.org</url>
-  <description>Box Java SDK OSGI bundle using maven-bundle-plugin.</description>
+  <description>Box Java SDK OSGI bundle using maven-bundle-plugin</description>
 
   <properties>
     <aem.host>localhost</aem.host>
