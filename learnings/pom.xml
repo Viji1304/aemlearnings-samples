@@ -31,12 +31,12 @@
         <module>repository-structure</module>
 	    <module>dispatcher.ams</module>
 	    <module>dispatcher.cloud</module>
-	    <!--<module>ui.frontend</module> -->
+	    <module>ui.frontend</module>
   </modules>
 
     <properties>
         <aem.host>localhost</aem.host>
-        <aem.port>4502</aem.port>
+        <aem.port>7502</aem.port>
         <aem.publish.host>localhost</aem.publish.host>
         <aem.publish.port>4503</aem.publish.port>
         <sling.user>admin</sling.user>
