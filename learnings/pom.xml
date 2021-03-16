@@ -696,7 +696,12 @@
 			    <groupId>org.apache.commons</groupId>
 			    <artifactId>commons-csv</artifactId>
 			    <version>1.7</version>
-			</dependency>					
+			</dependency>
+			<dependency>
+		        <groupId>software.amazon.awssdk</groupId>
+		        <artifactId>sns</artifactId>
+		        <version>2.16.13</version>
+    		</dependency>					
         </dependencies>
     </dependencyManagement>
 

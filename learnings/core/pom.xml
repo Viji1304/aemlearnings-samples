@@ -198,5 +198,9 @@ Bundle-DocURL:
 			    <groupId>org.apache.commons</groupId>
 			    <artifactId>commons-csv</artifactId>
 		</dependency>
+		<dependency>
+	        <groupId>software.amazon.awssdk</groupId>
+	        <artifactId>sns</artifactId>	        
+    	</dependency>
     </dependencies>
 </project>
