@@ -36,7 +36,7 @@
                 <configuration>
                     <instructions>
                         <Import-Package>*;resolution:=optional</Import-Package>
-                        <Export-Package>*</Export-Package>                   
+                        <Export-Package>*</Export-Package>     // For actual project use, Explicitly mention the desired package names here instead of "*"       
                         <Embed-Dependency>*;inline=true</Embed-Dependency> 
                         <Embed-Transitive>true</Embed-Transitive>                                          
                     </instructions>                    
